@@ -5,16 +5,18 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { TbGridDots } from "react-icons/tb";
 import { useState } from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 const Navbar = () => {
-const [active, setActive] = useState('navBar')
+const [navBarActive, setnavBarActive] = useState('navBar')
 // fucntion to show toggle navBar
 const showNav = () =>{
-  setActive('navBar setActiveNavbar')
+  setnavBarActive('navBar setActiveNavbar')
 }
 
 // fuction to close navebar toggle
 const removeNavbar = () =>{
-  setActive('navBar')
+  setnavBarActive('navBar')
 }
 
 
@@ -29,10 +31,10 @@ const removeNavbar = () =>{
           
         </div>
 
-        <div className={active}>
+        <div className={navBarActive}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="#" className="navLink">Home</a>
+              <NavLink to={'/'} className="navLink">Home</NavLink>
             </li>
 
             <li className="navItem">
@@ -44,7 +46,8 @@ const removeNavbar = () =>{
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">About</a>
+              <NavLink to={'/about'} className="navLink">About</NavLink>
+              
             </li>
 
             <li className="navItem">
@@ -56,7 +59,7 @@ const removeNavbar = () =>{
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">Contact</a>
+              <NavLink to={'/contact'} className="navLink">Contact</NavLink>
             </li>
 
             <button className='btn'>
